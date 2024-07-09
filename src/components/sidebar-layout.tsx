@@ -196,13 +196,13 @@ export function SidebarLayout({
                                                 isQaExpanded ? (
                                                     <div className="border-l border-gray-400 visible mt-3"
                                                          style={{marginLeft: "-10px"}}>
-                                                        <div className="flex">
+                                                        <div className="flex  pt-2">
                                                             <div
                                                                 className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                             <div className="w-3/5">Invoices</div>
                                                             <div className="w/1/5">33</div>
                                                         </div>
-                                                        <div className="flex">
+                                                        <div className="flex pt-2 mb-1">
                                                             <div
                                                                 className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                             <div className="w-3/5">Proposals</div>
@@ -216,8 +216,8 @@ export function SidebarLayout({
                                                 )
                                             ) : (
                                                 isQaExpanded ? (
-                                                    <div className="visible pt-1">
-                                                        <div className="flex pt-1">
+                                                    <div className="visible pt-2">
+                                                        <div className="flex pt-2">
                                                             <div className="w-4/5"
                                                                  style={{paddingLeft: "19px"}}>Invoices
                                                             </div>
@@ -228,7 +228,7 @@ export function SidebarLayout({
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="flex pt-1">
+                                                        <div className="flex pt-3 mb-1">
                                                             <div className="w-4/5"
                                                                  style={{paddingLeft: "19px"}}>Proposals
                                                             </div>
@@ -290,7 +290,7 @@ export function SidebarLayout({
                                         <div
                                             className={isSidebarExpanded ? (" visible align-top w-full") : (" invisible ")}
                                             style={{paddingBottom: "14px"}}>
-                                            <div className="flex justify-between w-full" style={{paddingTop: "14px"}}>
+                                            <div className="flex justify-between w-full" style={{paddingTop: "11px"}}>
                                                 <div className="font-semibold pl-4"
                                                      onClick={handleLnaClick}>Leads & Events
                                                 </div>
@@ -310,13 +310,13 @@ export function SidebarLayout({
                                                 {!isSidebarExpanded ? (
                                                     isLnaExpanded ? (
                                                         <div className="border-l border-gray-400 visible -ml-3 mt-3">
-                                                            <div className="flex">
+                                                            <div className="flex pt-2">
                                                                 <div
                                                                     className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                                 <div className="w-3/5">Invoices</div>
                                                                 <div className="w/1/5">33</div>
                                                             </div>
-                                                            <div className="flex">
+                                                            <div className="flex pt-2">
                                                                 <div
                                                                     className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                                 <div className="w-3/5">Proposals</div>
@@ -330,8 +330,8 @@ export function SidebarLayout({
                                                     )
                                                 ) : (
                                                     isLnaExpanded ? (
-                                                        <div className="visible pt-1">
-                                                            <div className="flex pt-1">
+                                                        <div className="visible pt-2">
+                                                            <div className="flex pt-2">
                                                                 <div className="w-4/5"
                                                                      style={{paddingLeft: "17px"}}>Invoices
                                                                 </div>
@@ -342,7 +342,7 @@ export function SidebarLayout({
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div className="flex pt-1">
+                                                            <div className="flex pt-3">
                                                                 <div className="w-4/5"
                                                                      style={{paddingLeft: "17px"}}>Proposals
                                                                 </div>
@@ -399,13 +399,13 @@ export function SidebarLayout({
                                                 {!isSidebarExpanded ? (
                                                     isFinExpanded ? (
                                                         <div className="border-l border-gray-400 visible -ml-3 mt-3">
-                                                            <div className="flex">
+                                                            <div className="flex pt-2">
                                                                 <div
                                                                     className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                                 <div className="w-3/5">Invoices</div>
                                                                 <div className="w/1/5">33</div>
                                                             </div>
-                                                            <div className="flex">
+                                                            <div className="flex pt-2">
                                                                 <div
                                                                     className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                                 <div className="w-3/5">Proposals</div>
@@ -419,8 +419,8 @@ export function SidebarLayout({
                                                     )
                                                 ) : (
                                                     isFinExpanded ? (
-                                                        <div className="visible pt-1">
-                                                            <div className="flex pt-1">
+                                                        <div className="visible pt-2">
+                                                            <div className="flex pt-2">
                                                                 <div className="w-4/5"
                                                                      style={{paddingLeft: "17px"}}>Invoices
                                                                 </div>
@@ -431,7 +431,7 @@ export function SidebarLayout({
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div className="flex pt-1">
+                                                            <div className="flex pt-3">
                                                                 <div className="w-4/5"
                                                                      style={{paddingLeft: "17px"}}>Proposals
                                                                 </div>
@@ -488,13 +488,13 @@ export function SidebarLayout({
                                                 {!isSidebarExpanded ? (
                                                     isProdExpanded ? (
                                                         <div className="border-l border-gray-400 visible -ml-2 mt-3">
-                                                            <div className="flex">
+                                                            <div className="flex pt-2">
                                                                 <div
                                                                     className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                                 <div className="w-3/5">Invoices</div>
                                                                 <div className="w/1/5">33</div>
                                                             </div>
-                                                            <div className="flex">
+                                                            <div className="flex pt-2">
                                                                 <div
                                                                     className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                                 <div className="w-3/5">Proposals</div>
@@ -508,8 +508,8 @@ export function SidebarLayout({
                                                     )
                                                 ) : (
                                                     isProdExpanded ? (
-                                                        <div className="visible pt-1">
-                                                            <div className="flex pt-1">
+                                                        <div className="visible pt-2">
+                                                            <div className="flex pt-2">
                                                                 <div className="w-4/5"
                                                                      style={{paddingLeft: "20px"}}>Invoices
                                                                 </div>
@@ -520,7 +520,7 @@ export function SidebarLayout({
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <div className="flex pt-1">
+                                                            <div className="flex pt-3">
                                                                 <div className="w-4/5"
                                                                      style={{paddingLeft: "20px"}}>Proposals
                                                                 </div>
@@ -615,13 +615,13 @@ export function SidebarLayout({
                                                 isBookExpanded ? (
                                                     <div className="border-l border-gray-400 visible mt-3"
                                                          style={{marginLeft: "-9px"}}>
-                                                        <div className="flex">
+                                                        <div className="flex pt-2 mb-1">
                                                             <div
                                                                 className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                             <div className="w-3/5">Invoices</div>
                                                             <div className="w/1/5">33</div>
                                                         </div>
-                                                        <div className="flex">
+                                                        <div className="flex pt-2 mb-1">
                                                             <div
                                                                 className="pl-4 mr-3 w-[1]">&nbsp;</div>
                                                             <div className="w-3/5">Proposals</div>
@@ -635,8 +635,8 @@ export function SidebarLayout({
                                                 )
                                             ) : (
                                                 isBookExpanded ? (
-                                                    <div className="visible pt-1">
-                                                        <div className="flex pt-1">
+                                                    <div className="visible pt-2">
+                                                        <div className="flex pt-2 mb-1">
                                                             <div className="w-4/5"
                                                                  style={{paddingLeft: "19px"}}>Invoices
                                                             </div>
@@ -647,7 +647,7 @@ export function SidebarLayout({
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div className="flex pt-1">
+                                                        <div className="flex pt-3 mb-1">
                                                             <div className="w-4/5"
                                                                  style={{paddingLeft: "19px"}}>Proposals
                                                             </div>
