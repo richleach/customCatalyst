@@ -7,9 +7,34 @@ import Link from 'next/link';
 
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGridRound2Plus, faBookmark, faChevronRight, faChevronDown, faMagnifyingGlass, faHouse, faHandshake, faClipboardCheck, faChartMixedUpCircleDollar, faCalendarDay, faArrowUpRightFromSquare, faArrowRightArrowLeft } from "@fortawesome/pro-solid-svg-icons";
+import { faGridRound2Plus, faBookmark, faChevronRight, faChevronDown, faChevronUp, faMagnifyingGlass, faHouse, faHandshake, faClipboardCheck, faChartMixedUpCircleDollar, faCalendarDay, faArrowUpRightFromSquare, faArrowRightArrowLeft } from "@fortawesome/pro-solid-svg-icons";
 
 import { cn } from '@/lib/utils';
+import {DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuItem, DropdownMenu} from "@/components/ui/dropdown-menu";
+import {
+    ArrowRightStartOnRectangleIcon,
+    LightBulbIcon,
+    ShieldCheckIcon,
+    UserCircleIcon
+} from "@heroicons/react/16/solid";
+
+function UserDropdownMenu({anchor}: { anchor: 'top start' | 'bottom end' }) {
+    return (
+        <DropdownMenu>
+            <DropdownMenuTrigger>Open</DropdownMenuTrigger>
+            <DropdownMenuContent>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuItem>Profile</DropdownMenuItem>
+                <DropdownMenuItem>Billing</DropdownMenuItem>
+                <DropdownMenuItem>Team</DropdownMenuItem>
+                <DropdownMenuItem>Subscription</DropdownMenuItem>
+            </DropdownMenuContent>
+        </DropdownMenu>
+    );
+
+
+
+}
 
 function OpenMenuIcon() {
   return (
@@ -115,6 +140,8 @@ export function SidebarLayout({
     const handleMouseOut = (event:any) => {
         setIsSidebarExpanded(false);
     };
+
+
 
 
     return (
@@ -582,7 +609,7 @@ export function SidebarLayout({
 
                         {/*REDESIGN - BOOKMARKS*/}
                         <div className="rounded-md flex items-center justify-center bg-transparent"
-                             style={{marginTop: "6px", paddingBottom:"6px"}}>
+                             style={{marginTop: "6px", paddingBottom: "6px"}}>
                             <Link href="/" className="w-full">
                                 <div
                                     className="flex flex-row items-start rounded-md duration-0 mx-auto bg-white/60 w-full relative whitespace-nowrap pt-1">
@@ -671,49 +698,45 @@ export function SidebarLayout({
                         {/*</div>*/}
 
 
-                        {/*BOTTOM - USER*/}
-
-                        <div className="sticky bottom-0 mt-auto rounded-md flex bg-transparent" style={{paddingBottom:"8px"}}>
-                            <Link href="/" className="w-full">
+                        {/*REDESIGN: BOTTOM - USER*/}
+                        <div className="sticky bottom-0 mt-auto rounded-md flex bg-transparent pb-2">
+                            <DropdownMenu>
                                 <div
-                                    className="flex flex-row items-start rounded-md duration-0 mx-auto bg-white/60 w-full relative whitespace-nowrap pt-1">
+                                    className="flex flex-row items-start rounded-md duration-0 mx-auto bg-white/60 w-full relative whitespace-nowrap">
                                     <img src="/images/steveHeadShot.jpg" height={52} width={52} alt="Steve"
                                          className="rounded-md p-1"/>
-
                                     <div className={isSidebarExpanded ? (" visible align-top w-full") : (" invisible ")}
                                          style={{paddingBottom: "14px"}}>
                                         <div className="flex justify-between w-full" style={{paddingTop: "14px"}}>
                                             <div className="font-semibold"
-                                                  style={{paddingLeft: "19px"}}>Steve
-                                            </div>{/*onClick={handleUserClick}*/}
+                                                 onClick={handleUserClick} style={{paddingLeft: "17px"}}>
+                                                <DropdownMenuTrigger>
+                                                Steve
+                                                </DropdownMenuTrigger>
+                                            </div>
                                             <div className="ml-auto pr-2">
-                                                <FontAwesomeIcon icon={faChevronRight} size='sm'
+
+                                                <FontAwesomeIcon icon={faChevronUp} size='sm'
                                                                  style={{color: "#71857a"}}
                                                                  className={!isUserExpanded ? (" visible ") : (" invisible ")}
-                                                                 />{/*onClick={handleUserClick}*/}
-                                                <FontAwesomeIcon icon={faChevronDown} size='sm'
+                                                                 onClick={handleUserClick}/>
+                                                <FontAwesomeIcon icon={faChevronUp} size='sm'
                                                                  style={{color: "#71857a"}}
                                                                  className={isUserExpanded ? (" visible pr-2 ") : (" invisible ")}
-                                                                 />{/*onClick={handleUserClick}*/}
+                                                                 onClick={handleUserClick}/>
                                             </div>
                                         </div>
 
-                                        <div>
+                                        {/*<div>
                                             {!isSidebarExpanded ? (
                                                 isUserExpanded ? (
-                                                    <div className="border-l border-gray-400 visible mt-3"
-                                                         style={{marginLeft: "-9px"}}>
-                                                        <div className="flex">
-                                                            <div
-                                                                className="pl-4 mr-3 w-[1]">&nbsp;</div>
-                                                            <div className="w-3/5">Invoices</div>
-                                                            <div className="w/1/5">33</div>
+                                                    <div className=" visible mt-3"
+                                                         style={{marginLeft: "-10px"}}>
+                                                        <div className="flex  pt-2">
+                                                            <> </>
                                                         </div>
-                                                        <div className="flex">
-                                                            <div
-                                                                className="pl-4 mr-3 w-[1]">&nbsp;</div>
-                                                            <div className="w-3/5">Proposals</div>
-                                                            <div className="w/1/5 ml-auto">22</div>
+                                                        <div className="flex pt-2 mb-1">
+                                                            <> </>
                                                         </div>
                                                     </div>
                                                 ) : (
@@ -723,38 +746,30 @@ export function SidebarLayout({
                                                 )
                                             ) : (
                                                 isUserExpanded ? (
-                                                    <div className="visible pt-1">
-                                                        <div className="flex pt-1">
-                                                            <div className="w-4/5"
-                                                                 style={{paddingLeft: "19px"}}>My Account
-                                                            </div>
-                                                            <div className="w/1/5"
-                                                                 style={{paddingTop: "3px", paddingLeft: "6px"}}>
-
-                                                            </div>
+                                                    <div className="visible pt-2">
+                                                        <div className="flex pt-2">
+                                                            <> Open menu on click</>
                                                         </div>
-                                                        <div className="flex pt-1">
-                                                            <div className="w-4/5"
-                                                                 style={{paddingLeft: "19px"}}>Proposals
-                                                            </div>
-                                                            <div className="w/1/5"
-                                                                 style={{paddingTop: "3px", paddingLeft: "6px"}}>
-                                                                <div
-                                                                    className="rounded-xl bg-slate-200 text-gray-500  -pt-1 -pb-1 pl-2 pr-2 text-sm">24
-                                                                </div>
-                                                            </div>
+                                                        <div className="flex pt-3 mb-1">
+                                                            <> </>
                                                         </div>
                                                     </div>
                                                 ) : (
                                                     <> </>
                                                 )
                                             )}
-                                        </div>
+                                        </div>*/}
                                     </div>
                                 </div>
-                            </Link>
+                                <DropdownMenuContent>
+                                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                                    <DropdownMenuItem>Profile</DropdownMenuItem>
+                                    <DropdownMenuItem>Billing</DropdownMenuItem>
+                                    <DropdownMenuItem>Team</DropdownMenuItem>
+                                    <DropdownMenuItem>Subscription</DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
                         </div>
-
                     </aside>
                 </div>
             </div>
@@ -764,28 +779,38 @@ export function SidebarLayout({
           </MobileSidebar>*/}
 
             {/* Navbar on mobile */}
-            {/**/}<header className="flex items-center px-4 lg:hidden">
-              <div className="py-2.5">
-                  <NavbarItem onClick={() => setShowSidebar(true)} aria-label="Open navigation">
-                      <OpenMenuIcon/>
-                  </NavbarItem>
-              </div>
-              <div className="min-w-0 flex-1">{navbar}</div>
-          </header>
+            {/**/}
+            <header className="flex items-center px-4 lg:hidden">
+                <div className="py-2.5">
+                    <NavbarItem onClick={() => setShowSidebar(true)} aria-label="Open navigation">
+                        <OpenMenuIcon/>
+                    </NavbarItem>
+                </div>
+                <div className="min-w-0 flex-1">{navbar}</div>
+            </header>
 
             {/* Content */}
             <main className="flex flex-1 flex-col pb-2 lg:min-w-0 lg:pl-2 lg:pr-2  lg:pt-2">
                 <div
-                    className="grow p-6 lg:rounded-lg lg:bg-white lg:p-8 lg:shadow-sm lg:ring-1 lg:ring-zinc-950/5 dark:lg:bg-zinc-900 dark:lg:ring-white/10">
-                    <div className="w-full">
-                        <div className="flex justify-between items-start pl-4 pr-4 -mt-4">
-                            <div className="text-slate-500"><FontAwesomeIcon icon={faHouse} size='xs'/></div>
-                            <div className="tracking-widest" style={{color: "#BCBCBC"}}>PLANNING POD</div>
-                            <div className="text-slate-600"><FontAwesomeIcon icon={faArrowRightArrowLeft} size='xs'/>
+                    className="grow p-6 lg:rounded-lg lg:bg-white lg:p-2 lg:shadow-sm lg:ring-1 lg:ring-zinc-950/5 dark:lg:bg-zinc-900 dark:lg:ring-white/10">
+                    <div style={{
+                        height: "97dvh",
+                        width: "100%",
+                        overflowY: "auto",
+                        overflowX: "hidden",
+                        padding: "20px"
+                    }}>
+                        <div className="w-full">
+                            <div className="flex justify-between items-start pl-4 pr-4 -mt-3 mb-2">
+                                <div className="text-slate-500"><FontAwesomeIcon icon={faHouse} size='xs'/></div>
+                                <div className="tracking-widest" style={{color: "#BCBCBC"}}>PLANNING POD</div>
+                                <div className="text-slate-600"><FontAwesomeIcon icon={faArrowRightArrowLeft}
+                                                                                 size='xs'/>
+                                </div>
                             </div>
                         </div>
+                        <div className="mx-auto">{children}</div>
                     </div>
-                    <div className="mx-auto">{children}</div>
                 </div>
             </main>
         </div>

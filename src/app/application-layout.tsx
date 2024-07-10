@@ -94,16 +94,13 @@ export function ApplicationLayout({
       }
       sidebar={
         <Sidebar>
-          <SidebarFooter className="max-lg:hidden">
+          <SidebarFooter className="max-lg:hidden rounded-md" style={{border: "thin solid purple"}}>
             <Dropdown>
               <DropdownButton as={SidebarItem}>
                 <span className="flex min-w-0 items-center gap-3">
                   <Avatar src="/users/erica.jpg" className="size-10" square alt="" />
                   <span className="min-w-0">
-                    <span className="block truncate text-sm/5 font-medium text-zinc-950 dark:text-white">Erica</span>
-                    <span className="block truncate text-xs/5 font-normal text-zinc-500 dark:text-zinc-400">
-                      erica@example.com
-                    </span>
+                    <span className="block truncate text-sm/5 font-medium text-zinc-950 dark:text-white">Steve</span>
                   </span>
                 </span>
                 <ChevronUpIcon />
