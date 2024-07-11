@@ -11,30 +11,6 @@ import { faGridRound2Plus, faBookmark, faChevronRight, faChevronDown, faChevronU
 
 import { cn } from '@/lib/utils';
 import {DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuItem, DropdownMenu} from "@/components/ui/dropdown-menu";
-import {
-    ArrowRightStartOnRectangleIcon,
-    LightBulbIcon,
-    ShieldCheckIcon,
-    UserCircleIcon
-} from "@heroicons/react/16/solid";
-
-function UserDropdownMenu({anchor}: { anchor: 'top start' | 'bottom end' }) {
-    return (
-        <DropdownMenu>
-            <DropdownMenuTrigger>Open</DropdownMenuTrigger>
-            <DropdownMenuContent>
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuItem>Profile</DropdownMenuItem>
-                <DropdownMenuItem>Billing</DropdownMenuItem>
-                <DropdownMenuItem>Team</DropdownMenuItem>
-                <DropdownMenuItem>Subscription</DropdownMenuItem>
-            </DropdownMenuContent>
-        </DropdownMenu>
-    );
-
-
-
-}
 
 function OpenMenuIcon() {
   return (
@@ -699,45 +675,56 @@ export function SidebarLayout({
 
 
                         {/*REDESIGN: BOTTOM - USER*/}
-                        <div className="sticky bottom-0 mt-auto rounded-md flex bg-transparent pb-2">
-                            <DropdownMenu>
+                        <div className="sticky bottom-0 mt-auto rounded-md flex items-center justify-center bg-transparent pb-2">
+                            <Link href="/" className="w-full">
                                 <div
                                     className="flex flex-row items-start rounded-md duration-0 mx-auto bg-white/60 w-full relative whitespace-nowrap">
+
+
                                     <img src="/images/steveHeadShot.jpg" height={52} width={52} alt="Steve"
-                                         className="rounded-md p-1"/>
+                                         className="rounded-md p-1" style={{paddingBottom: "5px"}}/>
                                     <div className={isSidebarExpanded ? (" visible align-top w-full") : (" invisible ")}
                                          style={{paddingBottom: "14px"}}>
                                         <div className="flex justify-between w-full" style={{paddingTop: "14px"}}>
                                             <div className="font-semibold"
-                                                 onClick={handleUserClick} style={{paddingLeft: "17px"}}>
-                                                <DropdownMenuTrigger>
-                                                Steve
-                                                </DropdownMenuTrigger>
+                                                 onClick={handleUserClick} style={{paddingLeft: "17px"}}>Steve
                                             </div>
                                             <div className="ml-auto pr-2">
-
-                                                <FontAwesomeIcon icon={faChevronUp} size='sm'
+                                                <FontAwesomeIcon icon={faChevronRight} size='sm'
                                                                  style={{color: "#71857a"}}
                                                                  className={!isUserExpanded ? (" visible ") : (" invisible ")}
                                                                  onClick={handleUserClick}/>
-                                                <FontAwesomeIcon icon={faChevronUp} size='sm'
+                                                <FontAwesomeIcon icon={faChevronDown} size='sm'
                                                                  style={{color: "#71857a"}}
                                                                  className={isUserExpanded ? (" visible pr-2 ") : (" invisible ")}
                                                                  onClick={handleUserClick}/>
                                             </div>
                                         </div>
 
-                                        {/*<div>
+                                        <div>
                                             {!isSidebarExpanded ? (
                                                 isUserExpanded ? (
-                                                    <div className=" visible mt-3"
-                                                         style={{marginLeft: "-10px"}}>
-                                                        <div className="flex  pt-2">
-                                                            <> </>
+                                                    <div className="border-l border-gray-400 visible mt-3"
+                                                         style={{marginLeft: "-26px"}}>
+                                                        <div className="flex  pt-4 mb-1">
+                                                            <div
+                                                                className="pl-4 mr-3 w-[1]">&nbsp;</div>
+                                                            <div className="w-3/5">My Account</div>
+                                                            <div className="w/1/5"></div>
+                                                        </div>
+                                                        <div className="flex pt-3 mb-1">
+                                                            <div
+                                                                className="pl-4 mr-3 w-[1]">&nbsp;</div>
+                                                            <div className="w-3/5">Settings</div>
+                                                            <div className="w/1/5"></div>
                                                         </div>
                                                         <div className="flex pt-2 mb-1">
-                                                            <> </>
+                                                            <div
+                                                                className="pl-4 mr-3 w-[1]">&nbsp;</div>
+                                                            <div className="w-3/5">Log Out</div>
+                                                            <div className="w/1/5 ml-auto"></div>
                                                         </div>
+
                                                     </div>
                                                 ) : (
                                                     <div style={{display: "none"}}>
@@ -747,28 +734,47 @@ export function SidebarLayout({
                                             ) : (
                                                 isUserExpanded ? (
                                                     <div className="visible pt-2">
-                                                        <div className="flex pt-2">
-                                                            <> Open menu on click</>
+                                                        <div className="flex pt-4 mb-1">
+                                                            <div className="w-4/5" style={{paddingLeft: "19px"}}>My
+                                                                Account
+                                                            </div>
+                                                            <div className="w/1/5"
+                                                                 style={{paddingTop: "3px", paddingLeft: "6px"}}>
+                                                                <div
+                                                                    className="rounded-xl bg-slate-200 text-gray-500  -pt-1 -pb-1 pl-2 pr-2 text-sm">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div className="flex pt-3  mb-1">
+                                                            <div className="w-4/5" style={{paddingLeft: "19px"}}>Settings
+                                                            </div>
+                                                            <div className="w/1/5"
+                                                                 style={{paddingTop: "3px", paddingLeft: "6px"}}>
+                                                                <div
+                                                                    className="rounded-xl bg-slate-200 text-gray-500  -pt-1 -pb-1 pl-2 pr-2 text-sm">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                         <div className="flex pt-3 mb-1">
-                                                            <> </>
+                                                            <div className="w-4/5"
+                                                                 style={{paddingLeft: "19px"}}>Log Out
+                                                            </div>
+                                                            <div className="w/1/5"
+                                                                 style={{paddingTop: "3px", paddingLeft: "6px"}}>
+                                                                <div
+                                                                    className="rounded-xl bg-slate-200 text-gray-500  -pt-1 -pb-1 pl-2 pr-2 text-sm">
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 ) : (
                                                     <> </>
                                                 )
                                             )}
-                                        </div>*/}
+                                        </div>
                                     </div>
                                 </div>
-                                <DropdownMenuContent>
-                                    <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                                    <DropdownMenuItem>Profile</DropdownMenuItem>
-                                    <DropdownMenuItem>Billing</DropdownMenuItem>
-                                    <DropdownMenuItem>Team</DropdownMenuItem>
-                                    <DropdownMenuItem>Subscription</DropdownMenuItem>
-                                </DropdownMenuContent>
-                            </DropdownMenu>
+                            </Link>
                         </div>
                     </aside>
                 </div>
