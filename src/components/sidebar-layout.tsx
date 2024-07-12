@@ -11,6 +11,7 @@ import { faGridRound2Plus, faBookmark, faChevronRight, faChevronDown, faChevronU
 
 import { cn } from '@/lib/utils';
 import {DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuItem, DropdownMenu} from "@/components/ui/dropdown-menu";
+import RightDrawer from "@/components/rightDrawer";
 
 function OpenMenuIcon() {
   return (
@@ -810,8 +811,9 @@ export function SidebarLayout({
                             <div className="flex justify-between items-start pl-4 pr-4 -mt-3 mb-2">
                                 <div className="text-slate-500"><FontAwesomeIcon icon={faHouse} size='xs'/></div>
                                 <div className="tracking-widest" style={{color: "#BCBCBC"}}>PLANNING POD</div>
-                                <div className="text-slate-600"><FontAwesomeIcon icon={faArrowRightArrowLeft}
-                                                                                 size='xs'/>
+                                <div className="text-slate-600">
+                                    {/*<FontAwesomeIcon icon={faArrowRightArrowLeft} size='xs'/>*/}
+                                    <RightDrawer />
                                 </div>
                             </div>
                         </div>

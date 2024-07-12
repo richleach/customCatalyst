@@ -5,6 +5,10 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@
 import { getOrders } from '@/data'
 import type { Metadata } from 'next'
 
+import {faArrowRightArrowLeft} from "@fortawesome/pro-solid-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React from "react";
+
 export const metadata: Metadata = {
   title: 'Orders',
 }
@@ -17,6 +21,7 @@ export default async function Orders() {
       <div className="flex items-end justify-between gap-4">
         <Heading>Orders</Heading>
         <Button className="-my-0.5">Create order</Button>
+        {/*<FontAwesomeIcon icon={faArrowRightArrowLeft} size='xs'/>*/}
       </div>
       <Table className="mt-8 [--gutter:theme(spacing.6)] lg:[--gutter:theme(spacing.10)]">
         <TableHead>
