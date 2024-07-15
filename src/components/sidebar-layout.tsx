@@ -12,6 +12,7 @@ import { faGridRound2Plus, faBookmark, faChevronRight, faChevronDown, faChevronU
 import { cn } from '@/lib/utils';
 import {DropdownMenuTrigger, DropdownMenuContent, DropdownMenuLabel, DropdownMenuItem, DropdownMenu} from "@/components/ui/dropdown-menu";
 import RightDrawer from "@/components/rightDrawer";
+import Mandrawer from './mandrawer';
 
 function OpenMenuIcon() {
   return (
@@ -682,13 +683,13 @@ export function SidebarLayout({
                                     className="flex flex-row items-start rounded-md duration-0 mx-auto bg-white/60 w-full relative whitespace-nowrap">
 
 
-                                    <img src="/images/steveHeadShot.jpg" height={52} width={52} alt="Steve"
+                                    <img src="/images/richHeadShot.jpg" height={52} width={52} alt="Rich"
                                          className="rounded-md p-1" style={{paddingBottom: "5px"}}/>
                                     <div className={isSidebarExpanded ? (" visible align-top w-full") : (" invisible ")}
                                          style={{paddingBottom: "14px"}}>
                                         <div className="flex justify-between w-full" style={{paddingTop: "14px"}}>
                                             <div className="font-semibold"
-                                                 onClick={handleUserClick} style={{paddingLeft: "17px"}}>Steve
+                                                 onClick={handleUserClick} style={{paddingLeft: "17px"}}>Rich
                                             </div>
                                             <div className="ml-auto pr-2">
                                                 <FontAwesomeIcon icon={faChevronRight} size='sm'
@@ -810,10 +811,10 @@ export function SidebarLayout({
                         <div className="w-full">
                             <div className="flex justify-between items-start pl-4 pr-4 -mt-3 mb-2">
                                 <div className="text-slate-500"><FontAwesomeIcon icon={faHouse} size='xs'/></div>
-                                <div className="tracking-widest" style={{color: "#BCBCBC"}}>PLANNING POD</div>
+                                <div className="tracking-widest" style={{color: "#BCBCBC"}}>ACME ROCKET & SLINGSHOT CORPORATION</div>
                                 <div className="text-slate-600">
                                     {/*<FontAwesomeIcon icon={faArrowRightArrowLeft} size='xs'/>*/}
-                                    <RightDrawer />
+                                    <Mandrawer />
                                 </div>
                             </div>
                         </div>

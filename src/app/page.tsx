@@ -25,7 +25,7 @@ export default async function Home() {
 
   return (
     <>
-      <Heading>Good afternoon, Steve</Heading>
+      <Heading>What&apos;s shakin&apos; Bacon?</Heading>
       <div className="mt-8 flex items-end justify-between">
         <Subheading>Overview</Subheading>
         <div>

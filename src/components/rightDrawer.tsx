@@ -75,8 +75,8 @@ export default function RightDrawer() {
             <DrawerContent>
                 <div className="mx-auto w-full max-w-sm">
                     <DrawerHeader>
-                    <DrawerTitle>Sales Goal</DrawerTitle>
-                        <DrawerDescription>Set your monthly sales goal.</DrawerDescription>
+                    <DrawerTitle>Sales/Widgets Goal</DrawerTitle>
+                        <DrawerDescription>Set your monthly goal.</DrawerDescription>
                     </DrawerHeader>
                     <div className="p-4 pb-0">
                         <div className="flex items-center justify-center space-x-2">
@@ -95,7 +95,7 @@ export default function RightDrawer() {
                                     {goal}
                                 </div>
                                 <div className="text-[0.70rem] uppercase text-muted-foreground">
-                                    Sales/month
+                                    Widgets/month
                                 </div>
                             </div>
                             <Button

@@ -14,9 +14,13 @@ import { ApplicationLayout } from './application-layout'
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faHouse, faArrowRightArrowLeft} from "@fortawesome/pro-solid-svg-icons";
 
+import '@mantine/core/styles.css';
+
+import { ColorSchemeScript, MantineProvider } from '@mantine/core';
+
 export const metadata: Metadata = {
-  title: "Planning Pod",
-  description: "Top online event management software for event planners and venues",
+  title: "Demo site",
+  description: "Modern layout and custom events designed and implemented as needed.",
 };
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
@@ -30,10 +34,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <head>
         <link rel="preconnect" href="https://rsms.me/" />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-
+        <ColorSchemeScript />
       </head>
       <body  style={{overflow: "hidden"}}>
-        <ApplicationLayout events={events}>{children}</ApplicationLayout>
+      <MantineProvider>
+        <ApplicationLayout events={events}>
+          {children}
+        </ApplicationLayout>
+      </MantineProvider>
       </body>
     </html>
   )
