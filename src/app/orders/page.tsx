@@ -4,9 +4,6 @@ import { Heading } from '@/components/heading'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/table'
 import { getOrders } from '@/data'
 import type { Metadata } from 'next'
-
-import {faArrowRightArrowLeft} from "@fortawesome/pro-solid-svg-icons";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import React from "react";
 
 export const metadata: Metadata = {
