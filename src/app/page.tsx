@@ -39,10 +39,10 @@ export default async function Home() {
                 </div>
             </div>
 
-            <div className="mt-2 grid gap-8 bg-rose-50 rounded-md p-2">
+            <div className="mt-2 grid gap-8 bg-rose-50 rounded-md p-4">
                 <div>
                     <div className="mt-2 text-lg/6 font-semibold sm:text-md">Welcome to my Catalyst Demo!</div>
-                    <div className="mt-3 text-lg/7 font-medium sm:text-md">Tailwind made this template and I customized
+                    <div className="mt-3 text-lg/7 font-normal sm:text-md">Tailwind made this template and I customized
                         it to its current state. This template comes with a side menu (as displayed) and a top menu. It
                         has <strong>many</strong> display features - too many to list here - that will make your next
                         web application stand out. <br/> A few notable features:
@@ -54,7 +54,7 @@ export default async function Home() {
                                 src="/images/openclose.png" height={16} width={16} alt="Open/Close"
                                 style={{display: "inline"}}/> icon in the upper right to drive it around.
                             </li>
-                            <li>&middot; Charts, forms, icons,</li>
+                            <li>&middot; Charts, forms, icons.... some groovy stuff!</li>
                             <li> &middot; It&apos;s all dummy-data and the forms don&apos;t go anywhere so take it for a
                                 spin.
                             </li>
