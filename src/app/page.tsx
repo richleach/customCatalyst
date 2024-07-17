@@ -6,7 +6,7 @@ import { Select } from '@/components/select'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/table'
 import { getRecentOrders } from '@/data'
 import Image from "next/image";
-
+import React from "react";
 
 export function Stat({ title, value, change }: { title: string; value: string; change: string }) {
   return (
@@ -40,17 +40,16 @@ export default async function Home() {
               </div>
           </div>*/}
 
-          <div className="mt-2 grid gap-8 bg-rose-50 rounded-md p-4">
+          <div className="mt-2 grid gap-8 bg-rose-50 rounded-md p-2">
               <div>
-                  <div className="mt-1 text-lg/6 font-semibold sm:text-md">Welcome to my Catalyst Demo!</div>
-                  <div className="mt-3 text-lg/7 font-normal sm:text-md">Tailwind made this template and I customized it to its current state. This template comes with a side menu (as displayed) and a top menu. It has <strong>many</strong> display features - too many to list here - that will make your next web application stand out. <br /> A few notable features:
+                  <div className="mt-2 text-lg/6 font-semibold sm:text-md">Welcome to my Catalyst Demo!</div>
+                  <div className="mt-3 text-lg/7 font-medium sm:text-md">Tailwind made this template and I customized it to its current state. This template comes with a side menu (as displayed) and a top menu. It has <strong>many</strong> display features - too many to list here - that will make your next web application stand out. <br /> A few notable features:
                   <ul className="p-2">
                       <li> &middot; Left side menu - I made this one into a collapsible component to preserve valuable screen real estate. (Mouse-over the icons....)</li>
-                      <li> &middot; Right side drawer - another effort to preserve screen space. Click the <Image src="/images/openclose.png" height={16} width={16} alt="Open/Close" style={{display:"inline"}}/> icon in the upper right to check it out. </li>
+                      <li> &middot; Right side drawer - another effort to preserve screen space. Click the <Image src="/images/openclose.png" height={16} width={16} alt="Open/Close" style={{display:"inline"}}/> icon in the upper right to give it a spin. </li>
                       <li>&middot; Charts, forms, icons, </li>
-                      <li> &middot; It&apos;s all dummy-data and the forms don&apos;t go anywhere so take it for a spin. </li>
+                      <li> &middot; It&apos;s all dummy-data and the forms don&apos;t go anywhere so take it for a spin. Drop me a line (rich@cfsnap.com) and I&apos;ll build your next application.</li>
                   </ul>
-                      Drop me a line (rich@cfsnap.com) and I&apos;ll build your next application.
                   </div>
                   <div className="mt-3 text-sm/6 sm:text-xs/6">
 
