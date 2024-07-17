@@ -6,7 +6,7 @@ import { Select } from '@/components/select'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/table'
 import { getRecentOrders } from '@/data'
 import Image from "next/image";
-import React from "react";
+
 
 export function Stat({ title, value, change }: { title: string; value: string; change: string }) {
   return (
