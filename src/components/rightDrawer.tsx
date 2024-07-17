@@ -2,8 +2,6 @@
 import * as React from "react"
 import { Minus, Plus } from "lucide-react"
 import { Bar, BarChart, ResponsiveContainer } from "recharts"
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {faChartPieSimple} from "@fortawesome/pro-solid-svg-icons";
 
 import { Button } from "@/components/ui/button"
 import {
@@ -69,8 +67,7 @@ export default function RightDrawer() {
     return (
         <Drawer direction="right">
             <DrawerTrigger asChild>
-                <div className="text-slate-600"><FontAwesomeIcon icon={faChartPieSimple}
-                                                                 size='lg'/></div>
+                <div className="text-slate-600"></div>
             </DrawerTrigger>
             <DrawerContent>
                 <div className="mx-auto w-full max-w-sm">
