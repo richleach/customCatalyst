@@ -52,13 +52,14 @@ export default async function Home() {
                             </li>
                             <li> &middot; Right side drawer - another effort to preserve screen space. Click the <Image
                                 src="/images/openclose.png" height={16} width={16} alt="Open/Close"
-                                style={{display: "inline"}}/> icon in the upper right to give it a spin.
+                                style={{display: "inline"}}/> icon in the upper right to drive it around.
                             </li>
                             <li>&middot; Charts, forms, icons,</li>
                             <li> &middot; It&apos;s all dummy-data and the forms don&apos;t go anywhere so take it for a
-                                spin. Drop me a line (rich@cfsnap.com) and I&apos;ll build your next application.
+                                spin.
                             </li>
                         </ul>
+                        Drop me a line (rich@cfsnap.com) and I&apos;ll build your next application.
                     </div>
                     <div className="mt-3 text-sm/6 sm:text-xs/6">
 
