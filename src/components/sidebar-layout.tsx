@@ -377,7 +377,7 @@ export function SidebarLayout({
                     }}>
                         <div className="w-full">
                             <div className="flex justify-between items-start pl-4 pr-4 -mt-3 mb-2">
-                                <div className="text-slate-500"><Link href="#"><Image src="/images/home.png" height={20} width={20} alt="Home"/></Link></div>
+                                <div className="text-slate-500"><Link href="/"><Image src="/images/home.png" height={20} width={20} alt="Home"/></Link></div>
                                 <div className="tracking-widest text-center" style={{color: "#BCBCBC"}}>ACME ROCKET & ANVIL
                                     CORPORATION<br /> Walla Walla, WA
                                 </div>

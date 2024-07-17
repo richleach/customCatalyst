@@ -3,6 +3,7 @@
 import { getEvents } from '@/data'
 import '@/styles/tailwind.css'
 import '@/styles/styles.css'
+import '@mantine/charts/styles.css'
 import {Inter} from "next/font/google";
 import type { Metadata } from 'next'
 import type React from 'react'

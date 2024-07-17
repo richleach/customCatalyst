@@ -1,14 +1,15 @@
-import Image from "next/image";
-
 type Drawer = {
     pathname: string;
 };
+
+import Image from "next/image";
+import ChartDemo from "@/components/ChartDemo";
+import MandrawerForm from "@/components/MandrawerForm";
 
 
 import React, { useState } from 'react';
 import { useDisclosure } from '@mantine/hooks';
 import { Drawer, Button } from '@mantine/core';
-
 
 export default function Mandrawer({pathname}:Drawer) {
 
@@ -16,15 +17,19 @@ export default function Mandrawer({pathname}:Drawer) {
 
     return (
         <>
-            <Drawer opened={opened} onClose={close} title="Accessory Drawer" position="right" className="bg-red font-extrabold">
-
-
+            <Drawer opened={opened} onClose={close} title="ANNUAL ANVIL SALE!" position="right"
+                    className="bg-rose-500 font-extrabold">
                 {/* Drawer content */}
-                This drawer is currently displayed on the
-                {pathname === '/' && ' Home page.'}
-                {pathname === '/orders' && ' Orders page.'}<br />
-                This is my drawer content, there are many like it but this drawer is mine.
 
+                Check out our best selling Anvils! (mouse-over)
+                <ChartDemo />
+                <MandrawerForm />
+                {/*<div>
+                    This drawer is currently displayed on the
+                    {pathname === '/' && ' Home page.'}
+                    {pathname === '/orders' && ' Orders page.'}<br />
+                </div>
+                */}
 
 
             </Drawer>
