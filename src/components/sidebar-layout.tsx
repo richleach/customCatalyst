@@ -122,12 +122,13 @@ export function SidebarLayout({
     return (
         <div
             className="relative isolate flex min-h-svh w-full  max-lg:flex-col dark:bg-zinc-900">
+
             {/* Sidebar on desktop */}
-            <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut}>
+            <div onMouseOver={handleMouseOver} onMouseOut={handleMouseOut} className="sm:max-lg:hidden">
                 <div
                     className={cn(
                         isSidebarExpanded ? 'w-[262px]' : 'w-[52px]',
-                        'transition-all duration-100 ease-in-out transform hidden sm:flex h-full  bg-transparent ml-2',
+                        'transition-all duration-100 ease-in-out transform hidden md:flex h-full  bg-transparent ml-2' ,
                     )}>
                     <aside
                         className="flex h-full flex-col w-full break-words overflow-x-hidden columns-1 bg-transparent">
@@ -251,7 +252,7 @@ export function SidebarLayout({
 
                         {/*REDESIGN: BOTTOM - USER*/}
                         <div
-                            className="sticky bottom-0 mt-auto rounded-md flex items-center justify-center bg-transparent pb-2">
+                            className="sticky bottom-0 mt-auto rounded-md flex items-center justify-center bg-transparent pb-2 md:visible">
                             <Link href="#" className="w-full">
                                 <div
                                     className="flex flex-row items-start rounded-md duration-0 mx-auto bg-white/60 w-full relative whitespace-nowrap">
@@ -354,7 +355,7 @@ export function SidebarLayout({
           </MobileSidebar>*/}
 
             {/* Navbar on mobile */}
-            {/**/}
+            {/*
             <header className="flex items-center px-4 lg:hidden">
                 <div className="py-2.5">
                     <NavbarItem onClick={() => setShowSidebar(true)} aria-label="Open navigation">
@@ -363,7 +364,7 @@ export function SidebarLayout({
                 </div>
                 <div className="min-w-0 flex-1">{navbar}</div>
             </header>
-
+            */}
             {/* Content */}
             <main className="flex flex-1 flex-col pb-2 lg:min-w-0 lg:pl-2 lg:pr-2  lg:pt-2">
                 <div
@@ -377,12 +378,167 @@ export function SidebarLayout({
                     }}>
                         <div className="w-full">
                             <div className="flex justify-between items-start pl-4 pr-4 -mt-3 mb-2">
-                                <div className="text-slate-500"><Link href="/"><Image src="/images/home.png" height={20} width={20} alt="Home"/></Link></div>
-                                <div className="tracking-widest text-center" style={{color: "#BCBCBC"}}>ACME ROCKET & ANVIL
-                                    CORPORATION<br /> Walla Walla, WA
+                                <div className="text-slate-500"><Link href="/"><Image src="/images/home.png" height={20}
+                                                                                      width={20} alt="Home"/></Link>
                                 </div>
-                                <div className="text-slate-600" style={{cursor:"pointer"}}>
+                                <div className="tracking-widest text-center text-slate-600">ACME ROCKET &
+                                    ANVIL
+                                    CORPORATION<br/> Walla Walla, WA
+                                </div>
+                                <div className="text-slate-600" style={{cursor: "pointer"}}>
                                     <Mandrawer pathname={pathname}/>
+                                </div>
+                            </div>
+                            <div className="lg:hidden">
+                                {/*mobile nav on left side, only visible when screen is medium....*/}
+
+                                <div className="rounded-md flex items-center justify-center bg-transparent"
+                                     style={{marginTop: "6px"}}>
+                                    <Link href="#" className="w-full">
+                                        <div
+                                            className="flex flex-row items-center rounded-md duration-0 mx-auto bg-white/80 w-full relative whitespace-nowrap pl-1">
+                                            <Image src="/images/cannon.png" height={38} width={38} alt="Giant Cannons"
+                                                   style={{paddingLeft: "4px"}}/>
+                                            <div style={{paddingBottom: "14px", paddingLeft: "20px"}}>
+                                                <div className="flex justify-between w-full"
+                                                     style={{paddingTop: "14px"}}>
+                                                    <div className="font-semibold text-slate-900"
+                                                         style={{paddingLeft: "17px"}}>Giant
+                                                        Cannons
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="rounded-md flex items-center justify-center bg-transparent"
+                                     style={{marginTop: "6px"}}>
+                                    <Link href="#" className="w-full">
+                                        <div
+                                            className="flex flex-row items-center rounded-md duration-0 mx-auto bg-white/80 w-full relative whitespace-nowrap pl-1">
+                                            <Image src="/images/mallet.png" height={38} width={38} alt="Huge Mallets"
+                                                   style={{paddingLeft: "4px"}}/>
+                                            <div style={{paddingBottom: "14px", paddingLeft: "20px"}}>
+                                                <div className="flex justify-between w-full"
+                                                     style={{paddingTop: "14px"}}>
+                                                    <div className="font-semibold text-slate-900"
+                                                         style={{paddingLeft: "17px"}}>Huge
+                                                        Mallets
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="rounded-md flex items-center justify-center bg-transparent"
+                                     style={{marginTop: "6px"}}>
+                                    <Link href="#" className="w-full">
+                                        <div
+                                            className="flex flex-row items-center rounded-md duration-0 mx-auto bg-white/80 w-full relative whitespace-nowrap pl-1">
+                                            <Image src="/images/bombs.png" height={38} width={38} alt="Rain of Bombs"
+                                                   style={{paddingLeft: "4px"}}/>
+                                            <div style={{paddingBottom: "14px", paddingLeft: "20px"}}>
+                                                <div className="flex justify-between w-full"
+                                                     style={{paddingTop: "14px"}}>
+                                                    <div className="font-semibold text-slate-900"
+                                                         style={{paddingLeft: "17px"}}>Rain of Bombs
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="rounded-md flex items-center justify-center bg-transparent"
+                                     style={{marginTop: "6px"}}>
+                                    <Link href="#" className="w-full">
+                                        <div
+                                            className="flex flex-row items-center rounded-md duration-0 mx-auto bg-white/80 w-full relative whitespace-nowrap pl-1">
+                                            <Image src="/images/flag.png" height={38} width={38} alt="Flags of Mercy"
+                                                   style={{paddingLeft: "4px"}}/>
+                                            <div style={{paddingBottom: "14px", paddingLeft: "20px"}}>
+                                                <div className="flex justify-between w-full"
+                                                     style={{paddingTop: "14px"}}>
+                                                    <div className="font-semibold text-slate-900"
+                                                         style={{paddingLeft: "17px"}}>Flags of Mercy
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="rounded-md flex items-center justify-center bg-transparent"
+                                     style={{marginTop: "6px"}}>
+                                    <Link href="#" className="w-full">
+                                        <div
+                                            className="flex flex-row items-center rounded-md duration-0 mx-auto bg-white/80 w-full relative whitespace-nowrap pl-1">
+                                            <Image src="/images/timebomb.png" height={38} width={38} alt="Honest Time Bombs"
+                                                   style={{paddingLeft: "4px"}}/>
+                                            <div style={{paddingBottom: "14px", paddingLeft: "20px"}}>
+                                                <div className="flex justify-between w-full"
+                                                     style={{paddingTop: "14px"}}>
+                                                    <div className="font-semibold text-slate-900"
+                                                         style={{paddingLeft: "17px"}}>Honest Time Bombs
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="rounded-md flex items-center justify-center bg-transparent"
+                                     style={{marginTop: "6px"}}>
+                                    <Link href="#" className="w-full">
+                                        <div
+                                            className="flex flex-row items-center rounded-md duration-0 mx-auto bg-white/80 w-full relative whitespace-nowrap pl-1">
+                                            <Image src="/images/fakesand.png" height={38} width={38}
+                                                   alt="Exploding Bird Seed"
+                                                   style={{paddingLeft: "4px"}}/>
+                                            <div style={{paddingBottom: "14px", paddingLeft: "20px"}}>
+                                                <div className="flex justify-between w-full"
+                                                     style={{paddingTop: "14px"}}>
+                                                    <div className="font-semibold text-slate-900"
+                                                         style={{paddingLeft: "17px"}}>Exploding Bird Seed
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="rounded-md flex items-center justify-center bg-transparent"
+                                     style={{marginTop: "6px"}}>
+                                    <Link href="#" className="w-full">
+                                        <div
+                                            className="flex flex-row items-center rounded-md duration-0 mx-auto bg-white/80 w-full relative whitespace-nowrap pl-1">
+                                            <Image src="/images/beartrap.png" height={38} width={38} alt="Fail Safe Traps"
+                                                   style={{paddingLeft: "4px"}}/>
+                                            <div style={{paddingBottom: "14px", paddingLeft: "20px"}}>
+                                                <div className="flex justify-between w-full"
+                                                     style={{paddingTop: "14px"}}>
+                                                    <div className="font-semibold text-slate-900"
+                                                         style={{paddingLeft: "17px"}}>Fail Safe Traps
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
+                                </div>
+                                <div className="rounded-md flex items-center justify-center bg-transparent"
+                                     style={{marginTop: "6px"}}>
+                                    <Link href="#" className="w-full">
+                                        <div
+                                            className="flex flex-row items-center rounded-md duration-0 mx-auto bg-white/80 w-full relative whitespace-nowrap pl-1">
+                                            <Image src="/images/rocket.png" height={38} width={38}
+                                                   alt="Acme Rockets"
+                                                   style={{paddingLeft: "4px"}}/>
+                                            <div style={{paddingBottom: "14px", paddingLeft: "20px"}}>
+                                                <div className="flex justify-between w-full"
+                                                     style={{paddingTop: "14px"}}>
+                                                    <div className="font-semibold text-slate-900"
+                                                         style={{paddingLeft: "17px"}}>Acme Rockets
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
