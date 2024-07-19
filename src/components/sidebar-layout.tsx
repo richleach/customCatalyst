@@ -223,8 +223,8 @@ export function SidebarLayout({
                         <div className="rounded-md flex items-center justify-center bg-transparent" style={{marginTop: "6px"}}>
                             <Link href="#" className="w-full">
                                 <div className="flex flex-row items-center rounded-md duration-0 mx-auto bg-white/60 w-full relative whitespace-nowrap pl-1">
-                                    <Image src="/images/beartrap.png" height={38} width={38} alt="Fail Safe Traps" style={{paddingLeft: "4px"}}/>
-                                    <div className={isSidebarExpanded ? (" visible align-top w-full") : (" invisible ")} style={{paddingBottom: "14px"}}>
+                                    <Image src="/images/beartrap2.png" height={48} width={48} alt="Fail Safe Traps" />
+                                    <div className={isSidebarExpanded ? (" visible align-top w-full") : (" invisible w-full")} style={{paddingBottom: "14px"}}>
                                         <div className="flex justify-between w-full" style={{paddingTop: "14px"}}>
                                             <div className="font-semibold" style={{paddingLeft: "17px"}}>Fail Safe Traps</div>
                                         </div>
