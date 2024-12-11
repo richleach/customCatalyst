@@ -34,7 +34,8 @@ export default function Mandrawer({pathname}:Drawer) {
 
             </Drawer>
 
-            <Image src="/images/openclose.png" height={20} width={20} alt="Open/Close" onClick={open}/>
+            {/*<Image src="/images/openclose.png" height={20} width={20} alt="Open/Close" onClick={open}/>*/}
+            <span onClick={open}><strong>&lt;==&gt;</strong></span>
         </>
     );
 }

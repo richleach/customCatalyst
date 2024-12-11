@@ -50,9 +50,7 @@ export default async function Home() {
                             <li> &middot; Left side menu - I made this one into a collapsible component to preserve
                                 valuable screen real estate. (Mouse-over the icons....)
                             </li>
-                            <li> &middot; Right side drawer - another effort to preserve screen space. Click the <Image
-                                src="/images/openclose.png" height={16} width={16} alt="Open/Close"
-                                style={{display: "inline"}}/> icon in the upper right to drive it around.
+                            <li> &middot; Right side drawer - another effort to preserve screen space. Click the &lt;==&gt; icon in the upper right to drive it around.
                             </li>
                             <li>&middot; Charts, forms, icons.... some groovy stuff!</li>
                             <li> &middot; It&apos;s all dummy-data and the forms don&apos;t go anywhere so take it for a
